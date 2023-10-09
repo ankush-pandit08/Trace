@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trace| Book Your Train, Bus</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
+
+        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+           
+        }
+
+        body {
+
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+            
+        }
+
+        nav {
+            height: 150px;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            top: 20px;
+
+        }
+
+        nav ul li {
+            list-style: none;
+            padding: 10px;
+            margin-right: 10px;
+        }
+
+        nav ul li {
+            margin-right: 81px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-left: 20px;
+
+            font-size: 1.1rem;
+            cursor: pointer;
+
+        }
+
+        nav ul li:hover {
+            color: red;
+
+        }
+
+        i {
+            padding: 10px;
+        }
+
+
+
+        ul li img {
+            width: 134px;
+            position: absolute;
+            left: 0px;
+            top: -28px;
+            cursor: pointer;
+        }
+
+        /* Middle Section */
+
+        .middle {
+
+            width: 70%;
+            margin: auto;
+
+        }
+
+        input[type="text"] {
+            display: inline-block;
+            border: 3px solid black;
+            border-radius: 8px;
+            height: 90px;
+            width: 40%;
+            /* margin:auto; */
+            font-weight: bold;
+            color: black;
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+
+        }
+
+        input[type="text"]:hover{
+            box-shadow: 1px 1px 1px 1px;
+        }
+        .search{
+            font-weight: bold;
+            color: black;
+            font-size: 20px;
+            padding: 26px;
+            margin: 10px;
+            width: 12%;
+            height: 90px;
+            border: 3px solid black;
+            border-radius: 8px;
+            display: inline-block;
+            position: relative;
+            top: -6px;
+            cursor: pointer;
+            text-align: center;
+            background-color: #d98888;
+
+
+        }
+
+        .search:hover {
+            box-shadow: 1px 1px 1px 1px;
+        }
+
+
+        .middle-sec {
+            background-image: url('/img/middle.svg');
+            height: 400px;
+        }
+
+
+        /*Container*/
+        .container {
+            /* display: flex; */
+            width: 85%;
+            border: 1px solid black;
+            border-radius: 30px;
+            margin: auto;
+            position: relative;
+            top: -75px;
+            height: 350px;
+            background-color: white;
+
+
+        }
+
+        .container .box {
+            display: inline-block;
+            margin: 20px;
+            width: 279px;
+            height: 250px;
+            border: 1px solid black;
+            border-radius: 30px;
+            background-color: lightcyan;
+            box-shadow: 1px 1px 1px 1px;
+
+        }
+
+
+        .container h2 {
+            margin: 12px 33px;
+        }
+
+
+
+        .book {
+            display: flex;
+            width: 100%;
+            height: 270px;
+        }
+
+        .bus_photo {
+            position: relative;
+            margin-left: 222px;
+            width: 500px;
+            top: -125px;
+        }
+
+        .book p {
+            width: 29%;
+            padding: 15px;
+            font-size: 26px;
+            display: inline-block;
+            height: 50px;
+
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .book p span,
+        .book_bus span {
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+            color: red;
+
+        }
+
+        .book_bus span {
+            display: inline-block;
+            margin-left: 16px;
+            padding: 14px;
+            font-size: 1.5rem;
+            border: 2px solid #d98888;
+            border-radius: 8px;
+            background-color: #d98888;
+            color: white;
+            box-shadow: 1px 1px 1px black;
+        }
+
+        .book_bus span:hover{
+            box-shadow:2px 2px 2px black;
+        }
+
+        /*Enjoy*/
+
+        .enjoy {
+            background-color: #d98888;
+            width: 80%;
+            height: 300px;
+            border-radius: 15px;
+            margin: 50px auto;
+
+
+
+        }
+
+        .enjoy h2 {
+            font-size: 2rem;
+            color: white;
+            padding: 32px;
+        }
+
+        .enjoy .rating {
+            border-radius: 18px;
+            margin-left: 39px;
+            width: 261px;
+            height: 157px;
+            background-color: white;
+            display: inline-block;
+            box-shadow: 1px 1px 1px 1px;
+
+
+
+        }
+
+        .rating div {
+            font-size: 20px;
+            /* display: inline-block; */
+            padding: 18px 18px;
+        }
+
+        .rating .star {
+            font-size: 20px;
+            display: inline-block;
+            padding: 18px 18px;
+        }
+
+       .enjoy .login, .signup{
+            border: 2px solid black;
+            background-color: #f2bcbc;
+            padding: 10px;
+            display: inline-block;
+            margin:14px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+
+        }
+
+        .enjoy .login:hover, .signup:hover{
+            box-shadow: 1px 1px 1px black;
+            font-size: 1.3rem;
+        }
+
+        /*Footer*/
+
+        footer{
+            align-items: center;
+            height:50px;
+            display: flex;
+            background-color: black;
+            color:white;
+            justify-content: space-between
+        }
+        a{
+            text-decoration: none;
+            color:rgb(0, 0, 0);
+        }
+
+        
+        .bus_timing .list ul{
+        padding:10px;
+list-style: none;
+        }
+        .bus_timing .list ul{
+            display: flex;
+            font-size: 1.2rem;
+
+            justify-content: space-around;
+    
+        }
+        .container .box img{
+            border-radius: 29px 29px 13px 13px;
+    height: 135px;
+    width: 277px;
+        }
+
+      .box>h3{
+        padding:8px;
+      }
+    </style>
+</head>
+
+<body>
+    <nav>
+        
+        <ul>
+            <li><a href="/"><img src="/img/logo.jpg" alt="Logo"></a></li>
+            <li><i class="fa-solid fa-bus fa-lg"></i><a href="/">Bus Ticket</a></li>
+            <li><i class="fa-solid fa-train fa-lg"></i><a href="/">Train Ticket</a></li>
+            <li><i class="fa-solid fa-address-card fa-lg"></i><a href="/">About Us</a></li>
+            <li><i class="fa-solid fa-handshake-angle fa-lg"></i><a href="/">Help</a></li>
+
+           
+            <div class="signup"><a href="/logout">logout</a></div>
+           
+        </ul>
+        
+    </nav>
+
+    <div class="middle-sec">
+
+        <section >
+            <form action="/index"  method="post" class="middle">
+            <!-- <p>Book Your Ticket From Indias No 1 Ticket Booking Platform</p> -->
+            <input type="text" name="From" id="from" placeholder="From">
+            <input type="text" name="To" id="to" placeholder="To">
+            <button class="search"> <a href="/"><i class="fa-solid fa-magnifying-glass fa-xl"></i> </a></button>
+        </form>
+        </section>
+    </div>
+
+
+
+    <div class="container">
+        <h2>Trending Offers</h2>
+        <div class="box"> <img src="/public/img/banner1.webp" alt="img"> <h3 >Win an iPhone 15 Pro Max By Trace</h3></div>
+        <div class="box"><img src="/public/img/banner2.webp" alt="img"><h3>Get 50% discount on Trace Tickets</h3></div>
+        <div class="box"><img src="/public/img/banner3.webp" alt="img"><h3 >Save Rs.500 on Ticket Bookings from Trace</h3></div>
+        <div class="box"><img src="/public/img/banner4.webp" alt="img"><h3 >Flat Rs.300 off with ICICI Credit Card</h3></div>
+    </div>
+
+
+    <div class="book">
+        <p>NOW, GET MORE THAN JUST BUS <span>TICKETS WITH TRACE!</span></p>
+        <div id="bus_photo">
+            <img src="/img/bus image.png" class="bus_photo" alt="img">
+        </div>
+    </div>
+
+    <div class="book_bus">
+        <span><i class="fa-solid fa-bus"></i> <a href="/" style="color:white">Book Bus</a></span>
+    </div>
+
+
+    <div class="enjoy">
+        <h2>Enjoy Your Journey!</h2>
+        <div class="rating">
+            <div><i class="fa-solid fa-circle-check"></i> Quick Access </div>
+        </div>
+        <div class="rating">
+            <div><i class="fa-solid fa-circle-check"></i> BarCode </div>
+        </div>
+        <div class="rating">
+            <div><i class="fa-solid fa-circle-check"></i> Accounts </div>
+        </div>
+
+        <div class="login"><a href="/login">log-in</a></div>
+        <div class="signup"><a href="/signup">sign-up</a></div>
+    </div>
+
+
+    
+    
+
+
+<div class="footer">
+    <footer>
+        Ⓒ 2023 Trace India Pvt Ltd. All rights reserved <span class="boss"><span class="facebook"><a href="/"><i class="fa-brands fa-facebook"></i></a></span>
+        <span class="insta"><a href="/"><i class="fa-brands fa-instagram"></i></a></span>
+        <span class="twitter"><a href="/"><i class="fa-brands fa-twitter"></i></a></span></span>
+    </footer>
+</div>
+
+
+
+    <script src="https://kit.fontawesome.com/f131d87ed2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    
+    <style>
+        body{
+       background-color: lightcyan
+        }
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+        .container,h2{
+            font-family: "Poppins", sans-serif;
+
+        }
+        input{
+            width: 88%;
+    border-radius: 7px;
+    padding: 11px;
+    margin: 6px;
+
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width:500px;
+            /* margin:auto; */
+            font-weight: bold;
+        }
+        .btn{
+            font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: 6px;
+    width: 463px;
+    padding: 10px;
+    color: black;
+        }
+        .btn:hover{
+            box-shadow: 1px 1px 1px 1px black;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contaner">
+        <h2>New Bus Registration</h2>
+        <form action="/admin" method="post"> 
+           UserName: <input type="text" name="username" id="username" placeholder="UserName" />
+           Email: <input type="email" name="email" placeholder="Email" id="email" />
+          Password: <input type="password" name="password" placeholder="Password" id="password" />
+           From: <input type="text" name="From" id="form" placeholder="From">
+            To: <input type="text" name="To" id="to" placeholder="To">
+           Bus No: <input type="number" name="number" id="number" placeholder="Bus No.">
+           <button class="btn">submit</button>
+        </form>
+    </div>
+</body>
+</html>
