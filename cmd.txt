@@ -1,0 +1,13 @@
+git config --global user.name "Ankush Pandit"
+git config --global user.email "abc.gmail.com"
+
+touch .gitignore (optional)
+git init
+
+git add .
+git commit -m "Initial Commit"
+git status (optional)
+ssh-keygen -t rsa -b 4090 -C "Your Email"
+git remote add origin <link>
+
+git push origin master
