@@ -4,7 +4,8 @@
     "fs": "^0.0.1-security",
     "mongoose": "^7.5.3",
     "nodemon": "^3.0.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "pug": "^3.0.2"
   },
   "name": "trace",
   "version": "1.0.0",

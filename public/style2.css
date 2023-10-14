@@ -1,0 +1,140 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@600&display=swap');
+
+
+
+  .middle {
+
+    width: 70%;
+    margin: auto;
+
+}
+
+input[type="text"] {
+    display: inline-block;
+    border: 3px solid black;
+    border-radius: 8px;
+    height: 90px;
+    width: 40%;
+    /* margin:auto; */
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+input[type="text"]:hover{
+    box-shadow: 1px 1px 1px 1px;
+}
+.search{
+    font-weight: bold;
+    color: black;
+    font-size: 20px;
+    padding: 26px;
+    margin: 10px;
+    width: 12%;
+    height: 90px;
+    border: 3px solid black;
+    border-radius: 8px;
+    display: inline-block;
+    position: relative;
+    top: -6px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #d98888;
+
+
+}
+
+.search:hover {
+    box-shadow: 1px 1px 1px 1px;
+}
+
+
+
+
+
+
+
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.box{border:2px solid black;
+border-radius: 8px;
+width:50%;
+margin:30px 10px;
+padding:40px;
+position: relative;
+font-family: 'Gabarito', sans-serif;
+background-color: white(154, 153, 150);
+height:120px;
+box-shadow: 1px 1px 5px 1px black;
+
+}
+
+.main_box h1{
+    padding:10px;
+    text-align: center;
+    font-family: 'Gabarito', sans-serif;
+}
+
+.price{
+    position:absolute;
+    right:10px;
+    top:7px;
+}
+
+.no{
+    position:absolute;
+    top:7px;
+    left:10px;
+}
+
+.from{
+
+font-size: 1.6rem;
+}
+.to{
+    top: 42px;
+    font-size: 1.6rem;
+    position: absolute;
+    left: 267px;
+    
+
+}
+
+.box i{
+    position:absolute;
+    left:210px;
+    top:44px;
+    font-size: 1.6rem;
+
+}
+
+.date{
+    position: absolute;
+    right: 120px;
+    top: 7px;
+}
+
+.book{
+    position:absolute;
+    right:10px;
+    /* border: 2px solid black; */
+    border-radius: 8px;
+    background-color: rgb(220, 99, 91);
+    padding:8px;
+
+    
+}
+
+.book a{
+    padding:10px;
+    text-decoration:none;
+    color:white;
+    
+}

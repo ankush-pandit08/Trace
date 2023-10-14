@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Book Your Tickete | Travel From Trace </title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@600&display=swap');
+
+  *{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+  }
+    body {
+      font-family: 'Gabarito', sans-serif;
+background-color:rgb(244, 244, 244);
+    }
+
+    .headder h2{
+      margin:20px;
+    }
+
+    .headder form {
+  background-color: white;
+margin:10px;
+      width: 40%;
+    position:relative;
+    left:100px;
+    padding:20px;
+    border-radius: 10px;
+    }
+
+
+    input {
+      padding: 10px;
+      margin: 5px;
+      border: 2px solid rgb(255, 255, 255);
+      border-radius: 8px;
+      outline: none;
+      color:rgb(9, 9, 9);
+     background-color: rgb(236, 233, 233);
+     width:154px;
+    }
+
+    input[type="radio"]{
+      width:12px;
+    }
+  
+    .btn {
+      padding: 10px;
+      width: 18%;
+      margin-top: 8px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+ 
+  <div class="headder">
+    <h2>Ticket Booking Form</h2>
+
+    <form action="/ticket" method="post">
+      <h3>Passenger Details</h3><br>
+      <input type="text" name="name" id="name" placeholder="Enter Your Full Name">
+
+      <input type="text" name="age" id="age" placeholder="Age" style="width:50px">
+      <label for="male">Male</label>
+      <input type="radio" value="male" name="gender"   id="male">
+      <label for="female">Female</label>
+      <input type="radio" name="gender" id="female" value="female">
+
+      <br>
+
+   <h3>Contact Details</h3> <br>
+      <input type="email" name="email" id="email" placeholder="Enter Your Email">
+
+      <input type="number" name="number" id="number" placeholder="Phone Number">
+<br>
+   
+      <input type="date" name="date" id="date">
+<br>
+   
+      <input type="number" name="bus_no" id="bus_no" placeholder="Bus Number">
+<br>
+
+ 
+      <button class="btn">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>

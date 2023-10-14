@@ -1,4 +1,4 @@
-const { log } = require('console')
+const { log, count } = require('console')
 const express = require('express')
 const path = require('path')
 const app = express()
@@ -24,7 +24,8 @@ async function main() {
     email : { type: String, required:true, unique:true} ,
     password: { type:String, required:true},
     From: String,
-    To:String
+    To:String,
+    number:String
         
       });
 
@@ -42,8 +43,11 @@ app.use(express.urlencoded())
 
 // Pug Specific Stuff
 
-// app.use('view engine', 'pug');
-// app.use(path.join(__dirname,'/views'));
+
+app.set('view engine', 'pug')
+app.set('views', path.join(__dirname,'views'))
+
+
 
 
 // Roots 
@@ -78,13 +82,36 @@ app.post('/admin',(req,res)=>{
     data.save();
     res.sendFile(path.join(__dirname,'/admin.html'))
 })
-app.post('/index',(req, res)=>{
-    const from = req.body.From;
-    const to = req.body.To;
 
-    res.sendFile(path.join(__dirname,'./bus_list.html'))
+
+app.post('/bus_list',async (req, res)=>{
+    // const from = req.body.From;
+    // const to = req.body.To;
+
+
+
+    const data = await sign_up.findOne({$and:[{From:req.body.From},{To:req.body.To}]})
+    // const from1 =data.From;
+    // const to1 =data.To;
+    // const number = data.number;
+if(data){
+     res.status(200).render('bus_list', {number: data.number, from: data.From , to: data.To})}
+
+     else{
+        res.sendFile(path.join(__dirname,'/not_found.html'))
+     }
     
 })
+// app.get('/bus_list',async (req, res)=>{
+
+//      res.status(200).render('bus_list')
+    
+// })
+// app.get('/bus_list',(req, res)=>{
+//  res.render('bus_list', {number: 5, from: from2 , to: to2})
+
+    
+// })
 app.get('/login',(req, res)=>{
     res.sendFile(path.join(__dirname,'./login.html'))
     
@@ -142,6 +169,7 @@ app.get('/logout',(req, res)=>{
 
 
 
+
 app.get('/signup',(req, res)=>{
    
     res.sendFile(path.join(__dirname,'./signup.html'))
@@ -157,11 +185,41 @@ app.post('/signup',(req, res)=>{
 })
 
 
+
+
+app.get('/book_now',(req, res)=>{
+    res.sendFile(path.join(__dirname, '/book_now.html'))
+})
+app.post('/book_now',(req, res)=>{
+
+    res.sendFile(path.join(__dirname, '/book_now.html'))
+})
+
+
+app.post('/ticket',(req, res)=>{
+    const name = req.body.name;
+    const age = req.body.age;
+    const email=req.body.email;
+    const number=req.body.number;
+    const date= req.body.date;
+    const bus_no=req.body.bus_no;
+    res.render("ticket" ,{name:name, age:age, email:email, number:number, date:date, bus_number:bus_no})
+})
+app.get('/about',(req,res)=>
+{
+res.sendFile(path.join(__dirname, "/aboutus.html"))
+})
+
+
+app.get('/rail',(req,res)=>{
+    res.sendFile(path.join(__dirname,"/rail.html"))
+})
 // Start Server
 
 app.listen(port, ()=>{
 log(`listning on port ${port}`)
 })
+
 
 }
 main().catch(err => console.log(err));

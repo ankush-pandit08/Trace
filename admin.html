@@ -19,9 +19,12 @@
     border-radius: 7px;
     padding: 11px;
     margin: 6px;
+    font-size: .9rem;
 
         }
         form{
+            font-family: "Poppins", sans-serif;
+
             display: flex;
             flex-direction: column;
             width:500px;
@@ -50,9 +53,9 @@
         <form action="/admin" method="post"> 
            UserName: <input type="text" name="username" id="username" placeholder="UserName" />
            Email: <input type="email" name="email" placeholder="Email" id="email" />
-          Password: <input type="password" name="password" placeholder="Password" id="password" />
+           Password: <input type="password" name="password" placeholder="Password" id="password" />
            From: <input type="text" name="From" id="form" placeholder="From">
-            To: <input type="text" name="To" id="to" placeholder="To">
+           To: <input type="text" name="To" id="to" placeholder="To">
            Bus No: <input type="number" name="number" id="number" placeholder="Bus No.">
            <button class="btn">submit</button>
         </form>

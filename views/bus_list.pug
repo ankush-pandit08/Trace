@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Available | Travel From Trace</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="middle-sec">
+
+        <section >
+            <form action="/bus_list"  method="post" class="middle">
+            <!-- <p>Book Your Ticket From Indias No 1 Ticket Booking Platform</p> -->
+            <input type="text" name="From" id="from" placeholder="From">
+            <input type="text" name="To" id="to" placeholder="To">
+            <button class="search"> <a href="bus_list"><i class="fa-solid fa-magnifying-glass fa-xl" style="color:black"></i></a></button>
+        </form>
+        </section>
+    </div>
+
+<hr>
+    <div class="main_box">
+        <!-- |<h1>Bus Available</h1> -->
+    <div class="box">
+    |  
+    |  <p class="no"> Bus No : #{number}</p>
+    |  <i class="fa-solid fa-arrow-right"></i>
+
+    |  <p class="from"> From : #{from}</p> 
+    |  <p class="to"> To : #{to}</p>
+    |  <p class="price">Price : 120Rs</p>
+    | <p class="date">Date: Something</p>
+
+    <div class="book">
+    |   <a href="/book_now">Book Now</a> 
+    </div>
+</div>
+</div>
+| <script src="https://kit.fontawesome.com/f131d87ed2.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
+                
