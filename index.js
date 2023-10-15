@@ -6,6 +6,7 @@ const fs = require('fs')
 
 const mongoose = require('mongoose');
 
+isLogin = false;
 
 async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/Trace');
@@ -41,6 +42,9 @@ app.use(express.static(path.join(__dirname,'public')))
 app.use("/public", express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded())
 
+
+  
+
 // Pug Specific Stuff
 
 
@@ -70,17 +74,21 @@ app.get('/', (req, res)=>{
 //     }) 
 // })
 app.get('/admin',(req, res)=>{
+
     res.sendFile(path.join(__dirname,'./login.html'))
     
+  
     
 })
 app.post('/admin',(req,res)=>{
+   
     req.body.email='abc@gmail.com';
     req.body.username='vaanpand';
     password='geek'
     const data = new sign_up(req.body);
     data.save();
     res.sendFile(path.join(__dirname,'/admin.html'))
+
 })
 
 
@@ -88,7 +96,7 @@ app.post('/bus_list',async (req, res)=>{
     // const from = req.body.From;
     // const to = req.body.To;
 
-
+if(isLogin){
 
     const data = await sign_up.findOne({$and:[{From:req.body.From},{To:req.body.To}]})
     // const from1 =data.From;
@@ -100,7 +108,10 @@ if(data){
      else{
         res.sendFile(path.join(__dirname,'/not_found.html'))
      }
-    
+}
+else{
+    res.send("Login First")
+}
 })
 // app.get('/bus_list',async (req, res)=>{
 
@@ -114,10 +125,12 @@ if(data){
 // })
 app.get('/login',(req, res)=>{
     res.sendFile(path.join(__dirname,'./login.html'))
+    isLogin=true;
     
 })
 
 app.post('/login',async(req, res)=>{
+    isLogin=true;
     try {
 
         const email = req.body.email;
@@ -147,6 +160,7 @@ app.post('/login',async(req, res)=>{
 
 app.get('/logout',(req, res)=>{
     res.sendFile(path.join(__dirname,'./login.html'))
+    isLogin=false;
 })
 // app.post('/login',(req, res)=>{
 //     const user_name = req.body.user_name;
@@ -173,22 +187,38 @@ app.get('/logout',(req, res)=>{
 app.get('/signup',(req, res)=>{
    
     res.sendFile(path.join(__dirname,'./signup.html'))
+    isLogin=true;
     
 })
 app.post('/signup',(req, res)=>{
-    
-    
+  
+    isLogin=true;
     const data = new sign_up(req.body);
     data.save();
+    
     res.sendFile(path.join(__dirname,'/index.html'))
+  
+ 
+ 
+    
     
 })
 
 
-
+app.get('/index', (req, res)=>{
+    if(isLogin){
+    res.sendFile(path.join(__dirname, 'index.html'))}
+    else{
+        res.send("Login First")
+    }
+})
 
 app.get('/book_now',(req, res)=>{
-    res.sendFile(path.join(__dirname, '/book_now.html'))
+    if(isLogin){
+    res.sendFile(path.join(__dirname, '/book_now.html'))}
+    else{
+        res.send("Login First")
+    }
 })
 app.post('/book_now',(req, res)=>{
 
@@ -212,8 +242,14 @@ res.sendFile(path.join(__dirname, "/aboutus.html"))
 
 
 app.get('/rail',(req,res)=>{
-    res.sendFile(path.join(__dirname,"/rail.html"))
-})
+    if(isLogin){
+    res.sendFile(path.join(__dirname,"/rail.html"))}
+    else{
+        res.send("Login First")
+    }
+}
+
+)
 // Start Server
 
 app.listen(port, ()=>{

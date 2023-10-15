@@ -4,26 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trace| Book Your Train, Bus</title>
+    <title>Trace| Book Your Bus, Train</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Poppins&family=Roboto:wght@300&display=swap"
         rel="stylesheet">
 
-        <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <style>
         * {
             margin: 0px;
             padding: 0px;
             box-sizing: border-box;
-           
+
         }
 
         body {
 
             font-family: 'Roboto', sans-serif;
             font-weight: bold;
-            
+
         }
 
         nav {
@@ -43,6 +43,7 @@
             list-style: none;
             padding: 10px;
             margin-right: 10px;
+
         }
 
         nav ul li {
@@ -57,10 +58,16 @@
 
         }
 
-        nav ul li:hover {
+        nav ul li a i:hover {
             color: red;
 
         }
+
+        nav ul li a:hover {
+            color: red;
+
+        }
+
 
         i {
             padding: 10px;
@@ -100,10 +107,11 @@
 
         }
 
-        input[type="text"]:hover{
+        input[type="text"]:hover {
             box-shadow: 1px 1px 1px 1px;
         }
-        .search{
+
+        .search {
             font-weight: bold;
             color: black;
             font-size: 20px;
@@ -118,13 +126,16 @@
             top: -6px;
             cursor: pointer;
             text-align: center;
-            background-color: #d98888;
+            background-color: rgb(196, 90, 88);
+            box-shadow: 2px 2px 1px 1px;
 
 
         }
 
-        .search:hover {
-            box-shadow: 1px 1px 1px 1px;
+        .search:active {
+            transition: all ease-in-out 0s;
+            box-shadow: 1px 1px;
+
         }
 
 
@@ -204,21 +215,26 @@
             margin-left: 16px;
             padding: 14px;
             font-size: 1.5rem;
-            border: 2px solid #d98888;
+            border: 2px solid rgb(196, 90, 88);
             border-radius: 8px;
-            background-color: #d98888;
+            background-color: rgb(196, 90, 88);
             color: white;
-            box-shadow: 1px 1px 1px black;
+            box-shadow: 3px 3px 1px 1px black;
         }
 
-        .book_bus span:hover{
-            box-shadow:2px 2px 2px black;
+        .book_bus span:active {
+            
+    transition:all  ease-in-out 0s;
+    box-shadow: 1px 1px black;
+
+ 
         }
 
         /*Enjoy*/
 
         .enjoy {
-            background-color: #d98888;
+            box-shadow: 1px 1px 15px darkslategray;
+            background-color: rgb(196, 90, 88);
             width: 80%;
             height: 300px;
             border-radius: 15px;
@@ -259,87 +275,103 @@
             padding: 18px 18px;
         }
 
-       .enjoy .login, .signup{
+        .enjoy .login,
+        .signup {
             border: 2px solid black;
-            background-color: #f2bcbc;
+            background-color: rgb(196, 90, 88);
             padding: 10px;
             display: inline-block;
-            margin:14px;
+            margin: 14px;
             border-radius: 12px;
             font-size: 1.2rem;
+            
 
         }
 
-        .enjoy .login:hover, .signup:hover{
-            box-shadow: 1px 1px 1px black;
-            font-size: 1.3rem;
+        .login,
+        .signup {
+            box-shadow: 2px 2px 1px 1px;
+            
+        }
+
+        .enjoy .login:active,
+        .signup:active {
+
+            transition: all ease-in-out 0s;
+            box-shadow: 1px 1px;
+
+
         }
 
         /*Footer*/
 
-        footer{
+        footer {
             align-items: center;
-            height:50px;
+            height: 50px;
             display: flex;
             background-color: black;
-            color:white;
+            color: white;
             justify-content: space-between
         }
-        a{
+
+        a {
             text-decoration: none;
-            color:rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
         }
 
-        
-        .bus_timing .list ul{
-        padding:10px;
-list-style: none;
+
+        .bus_timing .list ul {
+            padding: 10px;
+            list-style: none;
         }
-        .bus_timing .list ul{
+
+        .bus_timing .list ul {
             display: flex;
             font-size: 1.2rem;
 
             justify-content: space-around;
-    
-        }
-        .container .box img{
-            border-radius: 29px 29px 13px 13px;
-    height: 135px;
-    width: 277px;
+
         }
 
-      .box>h3{
-        padding:8px;
-      }
+        .container .box img {
+            border-radius: 29px 29px 13px 13px;
+            height: 135px;
+            width: 277px;
+        }
+
+        .box>h3 {
+            padding: 8px;
+        }
     </style>
 </head>
 
 <body>
     <nav>
-        
-        <ul>
-            <li><a href="/"><img src="/img/logo.jpg" alt="Logo"></a></li>
-            <li><i class="fa-solid fa-bus fa-lg"></i><a href="/">Bus Ticket</a></li>
-            <li><i class="fa-solid fa-train fa-lg"></i><a href="/rail">Train Ticket</a></li>
-            <li><i class="fa-solid fa-address-card fa-lg"></i><a href="/about">About Us</a></li>
-            <li><i class="fa-solid fa-handshake-angle fa-lg"></i><a href="/">Help</a></li>
 
-           
+        <ul>
+            <li><a href="/index"><img src="/img/logo.jpg" alt="Logo"></a></li>
+            <li><a href="/index"><i class="fa-solid fa-bus fa-lg"></i>Bus Ticket</a></li>
+            <li><a href="/rail"><i class="fa-solid fa-train fa-lg"></i>Train Info</a></li>
+            <li><a href="/about"><i class="fa-solid fa-address-card fa-lg"></i>About Us</a></li>
+            <li><a href="/"><i class="fa-solid fa-handshake-angle fa-lg"></i>Help</a></li>
+
+
             <div class="signup"><a href="/logout">logout</a></div>
-           
+
         </ul>
-        
+
     </nav>
 
     <div class="middle-sec">
 
-        <section >
-            <form action="/bus_list"  method="post" class="middle">
-            <!-- <p>Book Your Ticket From Indias No 1 Ticket Booking Platform</p> -->
-            <input type="text" name="From" id="from" placeholder="From">
-            <input type="text" name="To" id="to" placeholder="To">
-            <button class="search"> <a href="bus_list"><i class="fa-solid fa-magnifying-glass fa-xl"></i></a></button>
-        </form>
+        <section>
+            <form action="/bus_list" method="post" class="middle">
+                <!-- <p>Book Your Ticket From Indias No 1 Ticket Booking Platform</p> -->
+                <input type="text" name="From" id="from" placeholder="From">
+                <input type="text" name="To" id="to" placeholder="To">
+                <button class="search"> <a href="bus_list"><i
+                            class="fa-solid fa-magnifying-glass fa-xl"></i></a></button>
+            </form>
         </section>
     </div>
 
@@ -347,10 +379,18 @@ list-style: none;
 
     <div class="container">
         <h2>Trending Offers</h2>
-        <div class="box"> <img src="/public/img/banner1.webp" alt="img"> <h3 >Win an iPhone 15 Pro Max By Trace</h3></div>
-        <div class="box"><img src="/public/img/banner2.webp" alt="img"><h3>Get 50% discount on Trace Tickets</h3></div>
-        <div class="box"><img src="/public/img/banner3.webp" alt="img"><h3 >Save Rs.500 on Ticket Bookings from Trace</h3></div>
-        <div class="box"><img src="/public/img/banner4.webp" alt="img"><h3 >Flat Rs.300 off with ICICI Credit Card</h3></div>
+        <div class="box"> <img src="/public/img/banner1.webp" alt="img">
+            <h3>Win an iPhone 15 Pro Max By Trace</h3>
+        </div>
+        <div class="box"><img src="/public/img/banner2.webp" alt="img">
+            <h3>Get 50% discount on Trace Tickets</h3>
+        </div>
+        <div class="box"><img src="/public/img/banner3.webp" alt="img">
+            <h3>Save Rs.500 on Ticket Bookings from Trace</h3>
+        </div>
+        <div class="box"><img src="/public/img/banner4.webp" alt="img">
+            <h3>Flat Rs.300 off with ICICI Credit Card</h3>
+        </div>
     </div>
 
 
@@ -362,38 +402,39 @@ list-style: none;
     </div>
 
     <div class="book_bus">
-        <span><i class="fa-solid fa-bus"></i> <a href="/" style="color:white">Book Bus</a></span>
+        <span><i class="fa-solid fa-bus"></i> <a href="/index" style="color:white">Book Bus</a></span>
     </div>
 
 
     <div class="enjoy">
-        <h2>Enjoy Your Journey!</h2>
+        <h2>Enjoy Your Rail Journey!</h2>
         <div class="rating">
-            <div><i class="fa-solid fa-circle-check"></i> Quick Access </div>
+            <div><i class="fa-solid fa-circle-check"></i> PNR Check </div>
         </div>
         <div class="rating">
-            <div><i class="fa-solid fa-circle-check"></i> BarCode </div>
+            <div><i class="fa-solid fa-circle-check"></i> Train No Info </div>
         </div>
         <div class="rating">
-            <div><i class="fa-solid fa-circle-check"></i> Accounts </div>
+            <div><i class="fa-solid fa-circle-check"></i> Live Station </div>
         </div>
 
-        <div class="login"><a href="/login">log-in</a></div>
-        <div class="signup"><a href="/signup">sign-up</a></div>
+        <div class="login" style="background-color:rgb(216, 216, 216);"><a href="/index" >refresh</a></div>
+        <div class="signup" style="background-color:rgb(216, 216, 216);"><a href="/logout">logout</a></div>
     </div>
 
 
-    
-    
 
 
-<div class="footer">
-    <footer>
-        Ⓒ 2023 Trace India Pvt Ltd. All rights reserved <span class="boss"><span class="facebook"><a href="/"><i class="fa-brands fa-facebook"></i></a></span>
-        <span class="insta"><a href="/"><i class="fa-brands fa-instagram"></i></a></span>
-        <span class="twitter"><a href="/"><i class="fa-brands fa-twitter"></i></a></span></span>
-    </footer>
-</div>
+
+
+    <div class="footer">
+        <footer>
+            Ⓒ 2023 Trace India Pvt Ltd. All rights reserved <span class="boss"><span class="facebook"><a href="/"><i
+                            class="fa-brands fa-facebook"></i></a></span>
+                <span class="insta"><a href="/"><i class="fa-brands fa-instagram"></i></a></span>
+                <span class="twitter"><a href="/"><i class="fa-brands fa-twitter"></i></a></span></span>
+        </footer>
+    </div>
 
 
 

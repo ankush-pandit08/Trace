@@ -16,17 +16,22 @@
         }
         input{
             width: 88%;
-    border-radius: 7px;
+    /* border-radius: 7px; */
+    background: none;
+    outline:none;
+    border:none;
+    border-bottom: 2px solid black;
     padding: 11px;
     margin: 6px;
     font-size: .9rem;
+    display: inline-block;
 
         }
         form{
             font-family: "Poppins", sans-serif;
 
-            display: flex;
-            flex-direction: column;
+            padding:20px;
+
             width:500px;
             /* margin:auto; */
             font-weight: bold;
@@ -40,9 +45,13 @@
     width: 463px;
     padding: 10px;
     color: black;
+    box-shadow: 2px 2px 1px 1px black;
+    background-color: transparent;
+    border:none;
         }
-        .btn:hover{
-            box-shadow: 1px 1px 1px 1px black;
+        .btn:active{
+            transition:all  ease-in-out 0s;
+    box-shadow:1px 1px;
         }
     </style>
 </head>
