@@ -19,7 +19,7 @@
             <span>Don't have any account? <a href="/signup">Sign Up</a></span>
           </div>
           <div class="form">
-          <form action="/login" method="post">
+          <form action="/login" name="signin" method="post" onsubmit="return validateForm()">
             <input type="email" name="email" id="username" placeholder="Email" />
             <input type="password" name="password" placeholder="Password" id="password" />
             <button>Log-in</button>
@@ -28,5 +28,23 @@
           
         </div>
       </div>
+
+      <script>
+        function validateForm() {
+          var email = document.forms.signin.email.value;
+          var password = document.forms.signin.password.value;
+        
+          if (email == "" || email == null) {
+            alert("Email must be filled out");
+            return false;
+          }
+          if (password == "" || password == null) {
+            alert("password must be filled out");
+            return false;
+          }
+
+        return true;
+        }
+      </script>
 </body>
 </html>

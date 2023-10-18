@@ -20,8 +20,7 @@ async function main() {
     //   });
 
     const signup = new mongoose.Schema({
-    username:{ type:String, required:true
-    , },
+    username:{ type:String, required:true},
     email : { type: String, required:true, unique:true} ,
     password: { type:String, required:true},
     From: String,
@@ -130,7 +129,7 @@ app.get('/login',(req, res)=>{
 })
 
 app.post('/login',async(req, res)=>{
-    isLogin=true;
+    
     try {
 
         const email = req.body.email;
@@ -155,6 +154,8 @@ app.post('/login',async(req, res)=>{
     } catch (error) {
         res.status(404).send("Something Went Wrong!")
     }
+
+    isLogin=true;
 
 })
 
@@ -184,7 +185,7 @@ app.get('/logout',(req, res)=>{
 
 
 
-app.get('/signup',(req, res)=>{
+app.get('/signup',async(req, res)=>{
    
     res.sendFile(path.join(__dirname,'./signup.html'))
     isLogin=true;
@@ -194,7 +195,13 @@ app.post('/signup',(req, res)=>{
   
     isLogin=true;
     const data = new sign_up(req.body);
-    data.save();
+
+    data.save()
+    //   .catch((err) => {
+    //     console.error(err);
+    //     res.status(500).send('Internal server error.');
+      
+    //   });
     
     res.sendFile(path.join(__dirname,'/index.html'))
   

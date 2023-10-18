@@ -59,7 +59,7 @@
 
     <div class="contaner">
         <h2>New Bus Registration</h2>
-        <form action="/admin" method="post"> 
+        <form action="/admin" method="post" name="admin" onsubmit="return validateForm()"> 
            UserName: <input type="text" name="username" id="username" placeholder="UserName" />
            Email: <input type="email" name="email" placeholder="Email" id="email" />
            Password: <input type="password" name="password" placeholder="Password" id="password" />
@@ -69,5 +69,48 @@
            <button class="btn">submit</button>
         </form>
     </div>
+
+    <script>
+        function validateForm() {
+          var username = document.forms.admin.username.value;
+          var email = document.forms.admin.email.value;
+          var password = document.forms.admin.password.value;
+          var from = document.forms.admin.from.value;
+          var to = document.forms.admin.to.value;
+          var busno = document.forms.admin.busno.value;
+        
+          if (email == "" || email == null) {
+            alert("Email must be filled out");
+            return false;
+          }
+          if (password == "" || password == null) {
+            alert("password must be filled out");
+            return false;
+          }
+          if (username == "" || username == null) {
+            alert("username must be filled out");
+            return false;
+          }
+
+          if( from == ""  || from==null){
+            alert("  must be filled out");
+            return false;
+          }
+          if( from == ""  ||from ==null){
+            alert("from must be filled out");
+            return false;
+          }
+          if( to == ""  ||to ==null){
+            alert("to must be filled out");
+            return false;
+          }
+          if( busno == ""  ||busno ==null){
+            alert("bus no. must be filled out");
+            return false;
+          }
+
+        return true;
+        }
+      </script>
 </body>
 </html>
