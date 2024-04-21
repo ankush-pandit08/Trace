@@ -20,29 +20,36 @@ background-color:rgb(244, 244, 244);
     }
 
     .headder h2{
-      margin:20px;
+      font-size: 3rem;
+    right: 177px;
+    top: 132px;
+    position: absolute;
+    margin: 20px;
     }
 
     .headder form {
-  background-color: white;
-margin:10px;
-      width: 40%;
-    position:relative;
-    left:100px;
-    padding:20px;
+      /* position: absolute; */
+      top:85px;
+    background-color: white;
+    margin: 10px;
+    width: 30%;
+    position: absolute;
+    left: 35%;
+    padding: 20px;
     border-radius: 10px;
+    box-shadow: 1px 1px 7px 0px;
     }
 
 
     input {
       padding: 10px;
-      margin: 5px;
-      border: 2px solid rgb(255, 255, 255);
-      border-radius: 8px;
-      outline: none;
-      color:rgb(9, 9, 9);
-     background-color: rgb(236, 233, 233);
-     width:154px;
+    margin: 5px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 8px;
+    outline: none;
+    color: rgb(9, 9, 9);
+    background-color: rgb(236, 233, 233);
+    width: 406px;
     }
 
     input[type="radio"]{
@@ -50,13 +57,15 @@ margin:10px;
     }
   
     .btn {
-      padding: 10px;
-      width: 18%;
-      margin-top: 8px;
-      font-size: 1.2rem;
-      font-weight: bold;
-      border-radius: 8px;
-      box-shadow: 2px 2px 1px 2px black;
+      margin-left: 6px;
+    margin-top: 11px;
+    padding: 10px;
+    width: 96%;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 1px 1px 1px 1px black;
     }
 
     .btn:active{
@@ -64,19 +73,24 @@ margin:10px;
     box-shadow:1px 1px;
 
     }
+
+    h3{
+      font-size: 1.5rem;
+      padding:7px;
+    }
   </style>
 </head>
 
 <body>
  
   <div class="headder">
-    <h2>Ticket Booking Form</h2>
+    <!-- <h2>Ticket Booking Form</h2> -->
 
     <form action="/ticket" method="post">
       <h3>Passenger Details</h3><br>
-      <input type="text" name="name" id="name" placeholder="Enter Your Full Name">
+      <input type="text" name="name" id="name" placeholder="Enter Your Full Name" required>
 
-      <input type="text" name="age" id="age" placeholder="Age" style="width:50px">
+      <input type="text" name="age" id="age" placeholder="Age" style="width:50px" required>
       <label for="male">Male</label>
       <input type="radio" value="male" name="gender"   id="male">
       <label for="female">Female</label>
@@ -85,15 +99,15 @@ margin:10px;
       <br>
 
    <h3>Contact Details</h3> <br>
-      <input type="email" name="email" id="email" placeholder="Enter Your Email">
+      <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
 
-      <input type="number" name="number" id="number" placeholder="Phone Number">
+      <input type="number" name="number" id="number" placeholder="Phone Number" required>
 <br>
    
-      <input type="date" name="date" id="date">
+      <input type="date" name="date" id="date" required>
 <br>
    
-      <input type="number" name="bus_no" id="bus_no" placeholder="Bus Number">
+      <input type="number" name="bus_no" id="bus_no" placeholder="Bus Number" required>
 <br>
 
  

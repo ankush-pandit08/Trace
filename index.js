@@ -109,7 +109,7 @@ if(data){
      }
 }
 else{
-    res.send("Login First")
+    res.sendFile(path.join(__dirname,'./login.html'))
 }
 })
 // app.get('/bus_list',async (req, res)=>{
@@ -216,7 +216,7 @@ app.get('/index', (req, res)=>{
     if(isLogin){
     res.sendFile(path.join(__dirname, 'index.html'))}
     else{
-        res.send("Login First")
+        res.sendFile(path.join(__dirname,'./login.html'))
     }
 })
 
@@ -224,7 +224,7 @@ app.get('/book_now',(req, res)=>{
     if(isLogin){
     res.sendFile(path.join(__dirname, '/book_now.html'))}
     else{
-        res.send("Login First")
+        res.sendFile(path.join(__dirname,'./login.html'))
     }
 })
 app.post('/book_now',(req, res)=>{
@@ -252,7 +252,7 @@ app.get('/rail',(req,res)=>{
     if(isLogin){
     res.sendFile(path.join(__dirname,"/rail.html"))}
     else{
-        res.send("Login First")
+        res.sendFile(path.join(__dirname,'./login.html'))
     }
 }
 

@@ -23,14 +23,14 @@
       </div>
       <div class="form">
         <form action="/signup" name="signup" method="post" onsubmit="return validateForm()">
-          <input type="text" name="username" id="username" placeholder="UserName" />
-          <input type="email" name="email" placeholder="Email" id="email" />
-          <input type="password" name="password" placeholder="Password" id="password" />
+          <input type="text" name="username" id="username" placeholder="UserName" required />
+          <input type="email" name="email" placeholder="Email" id="email" required />
+          <input type="password" name="password" placeholder="Password" id="password" required />
           <button>Sign Up</button>
         </form>
       </div>
       <div class="card_terms">
-        <input type="checkbox" name="" id="terms"> <span>I have read and agree to the <a href="">Terms of
+        <input type="checkbox" name="" id="terms" required> <span>I have read and agree to the <a href="">Terms of
             Service</a></span>
       </div>
     </div>
@@ -38,30 +38,18 @@
 
   <script>
     function validateForm() {
-      var name = document.forms.signup.username.value;
-      var email = document.forms.signup.email.value;
+
       var password = document.forms.signup.password.value;
-      if (name == "" || name == null) {
-        alert("Name must be filled out");
-        return false;
-      }
-      if (email == "" || email == null) {
-        alert("Email must be filled out");
-        return false;
-      }
-      if (password == "" || password == null) {
-        alert("password must be filled out");
-        return false;
-      }
-      
-     if(password.length <6){
+
+      if (password.length < 6) {
         alert("Password should be atleast 6 character long");
         password.focus();
         return false;
- 
 
-    }
-    return true;
+
+      }
+      
+      return true;
     }
   </script>
 </body>

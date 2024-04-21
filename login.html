@@ -20,8 +20,8 @@
           </div>
           <div class="form">
           <form action="/login" name="signin" method="post" onsubmit="return validateForm()">
-            <input type="email" name="email" id="username" placeholder="Email" />
-            <input type="password" name="password" placeholder="Password" id="password" />
+            <input type="email" name="email" id="username" placeholder="Email" required/>
+            <input type="password" name="password" placeholder="Password" id="password" required />
             <button>Log-in</button>
             </form>
           </div>
@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <script>
+      <!-- <script>
         function validateForm() {
           var email = document.forms.signin.email.value;
           var password = document.forms.signin.password.value;
@@ -45,6 +45,6 @@
 
         return true;
         }
-      </script>
+      </script> -->
 </body>
 </html>

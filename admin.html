@@ -27,27 +27,29 @@
     display: inline-block;
 
         }
-        form{
-            font-family: "Poppins", sans-serif;
-
-            padding:20px;
-
-            width:500px;
-            /* margin:auto; */
-            font-weight: bold;
+        form{    top: 46px;
+    position: relative;
+          /* height: 501px; */
+    border-radius: 10px;
+    border: 2px solid black;
+    font-family: "Poppins", sans-serif;
+    padding:4px 20px;
+    width: 417px;
+    margin: auto;
+    font-weight: bold;
         }
-        .btn{
-            font-weight: bold;
+        .btn{margin-bottom: 19px;
+          font-weight: bold;
     font-size: 1.2rem;
-    margin-top: 10px;
+    margin-top: 18px;
     border-radius: 5px;
     margin-left: 6px;
-    width: 463px;
+    width: 396px;
     padding: 10px;
     color: black;
     box-shadow: 2px 2px 1px 1px black;
     background-color: transparent;
-    border:none;
+    border: none;
         }
         .btn:active{
             transition:all  ease-in-out 0s;
@@ -58,11 +60,11 @@
 <body>
 
     <div class="contaner">
+      <form action="/admin" method="post" name="admin" onsubmit="return validateForm()"> 
         <h2>New Bus Registration</h2>
-        <form action="/admin" method="post" name="admin" onsubmit="return validateForm()"> 
-           UserName: <input type="text" name="username" id="username" placeholder="UserName" />
-           Email: <input type="email" name="email" placeholder="Email" id="email" />
-           Password: <input type="password" name="password" placeholder="Password" id="password" />
+           UserName: <input type="text" name="username" id="username" placeholder="UserName" required />
+           Email: <input type="email" name="email" placeholder="Email" id="email" required/>
+           Password: <input type="password" name="password" placeholder="Password" id="password"  required/>
            From: <input type="text" name="From" id="form" placeholder="From">
            To: <input type="text" name="To" id="to" placeholder="To">
            Bus No: <input type="number" name="number" id="number" placeholder="Bus No.">

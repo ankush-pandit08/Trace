@@ -1,7 +1,9 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@600&display=swap');
 
-
+body{
+    overflow: auto;
+}
 
   .middle {
 
@@ -68,16 +70,25 @@ input[type="text"]:hover{
 }
 .box{border:2px solid black;
 border-radius: 8px;
-width:50%;
+width:45%;
 margin:30px 10px;
 padding:40px;
 position: relative;
 font-family: 'Gabarito', sans-serif;
 background-color: white(154, 153, 150);
 height:120px;
-box-shadow: 1px 1px 5px 1px black;
+box-shadow: 1px 1px 1px 1px black;
 
 }
+
+.main_box:hover{
+    transition: all 0.5s ease-in-out;
+    /* transform: translateY(-10px); */
+    /* transform:scale(1.01) */
+}
+.main_box{display: flex;
+flex-wrap: wrap;
+justify-content: space-around;}
 
 .main_box h1{
     padding:10px;
@@ -125,13 +136,14 @@ font-size: 1.6rem;
 }
 
 .book{
-    position:absolute;
-    right:10px;
+    border: 2px solid black;
+    position: absolute;
+    right: 10px;
     /* border: 2px solid black; */
     border-radius: 8px;
     background-color: rgb(196, 90, 88);
-    padding:8px;
-    box-shadow: 2px 2px 1px 2px black;
+    padding: 8px;
+    box-shadow: 2px 2px 0px 0px black;
 
     
 }

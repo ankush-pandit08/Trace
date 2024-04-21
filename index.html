@@ -19,11 +19,15 @@
 
         }
 
+        html{
+scroll-behavior: smooth;
+
+        }
+
         body {
 
             font-family: 'Roboto', sans-serif;
             font-weight: bold;
-scroll-behavior: smooth;
         }
 
         nav {
@@ -362,13 +366,13 @@ scroll-behavior: smooth;
 
     </nav>
 
-    <div class="middle-sec">
+    <div class="middle-sec" id="middle">
 
         <section>
             <form action="/bus_list" method="post" class="middle">
                 <!-- <p>Book Your Ticket From Indias No 1 Ticket Booking Platform</p> -->
-                <input type="text" name="From" id="from" placeholder="From">
-                <input type="text" name="To" id="to" placeholder="To">
+                <input type="text" name="From" id="from" placeholder="From" required>
+                <input type="text" name="To" id="to" placeholder="To" required>
                 <button class="search"> <a href="bus_list"><i
                             class="fa-solid fa-magnifying-glass fa-xl"></i></a></button>
             </form>
@@ -402,7 +406,7 @@ scroll-behavior: smooth;
     </div>
 
     <div class="book_bus">
-        <span><i class="fa-solid fa-bus"></i> <a href="/index" style="color:white">Book Bus</a></span>
+        <span><i class="fa-solid fa-bus"></i> <a href="#middle" style="color:white">Book Bus</a></span>
     </div>
 
 
