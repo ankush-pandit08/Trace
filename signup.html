@@ -25,7 +25,7 @@
         <form action="/signup" name="signup" method="post" onsubmit="return validateForm()">
           <input type="text" name="username" id="username" placeholder="UserName" required />
           <input type="email" name="email" placeholder="Email" id="email" required />
-          <input type="password" name="password" placeholder="Password" id="password" required />
+          <input type="password" name="password" placeholder="Password" id="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
           <button>Sign Up</button>
         </form>
       </div>

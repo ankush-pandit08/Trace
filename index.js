@@ -21,7 +21,7 @@ async function main() {
 
     const signup = new mongoose.Schema({
     username:{ type:String, required:true},
-    email : { type: String, required:true, unique:true} ,
+    email : { type: String, required:true,} ,
     password: { type:String, required:true},
     From: String,
     To:String,
@@ -56,7 +56,7 @@ app.set('views', path.join(__dirname,'views'))
 // Roots 
 
 app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, './signup.html'));
+    res.sendFile(path.join(__dirname, './login.html'));
 })
 
 // app.get('/form', (req, res)=>{
@@ -74,16 +74,13 @@ app.get('/', (req, res)=>{
 // })
 app.get('/admin',(req, res)=>{
 
-    res.sendFile(path.join(__dirname,'./login.html'))
-    
-  
-    
+    res.sendFile(path.join(__dirname,'./login.html')) 
 })
 app.post('/admin',(req,res)=>{
    
-    req.body.email='abc@gmail.com';
-    req.body.username='vaanpand';
-    password='geek'
+    // req.body.email='abc@gmail.com';
+    // req.body.username='vaanpand';
+    // password='geek'
     const data = new sign_up(req.body);
     data.save();
     res.sendFile(path.join(__dirname,'/admin.html'))
@@ -232,19 +229,43 @@ app.post('/book_now',(req, res)=>{
     res.sendFile(path.join(__dirname, '/book_now.html'))
 })
 
+app.get('/payment',(req, res)=>{
+    if(isLogin){
+    res.sendFile(path.join(__dirname, '/payment.html'))}
+    else{
+        res.sendFile(path.join(__dirname,'./login.html'))
+    }
+})
+app.post('/payment',(req, res)=>{
+
+    res.sendFile(path.join(__dirname, '/payment.html'))
+})
+
 
 app.post('/ticket',(req, res)=>{
-    const name = req.body.name;
-    const age = req.body.age;
-    const email=req.body.email;
-    const number=req.body.number;
-    const date= req.body.date;
-    const bus_no=req.body.bus_no;
+    data = [req.body.name, req.body.age, req.body.email, req.body.number,req.body.date, req.body.bus_no]
+    const name = "Your Name";
+    const age = "Your Age";
+    const email="Your Email";
+    const number="Your Phone No";
+    const date= "Your Date of Journey";
+    
+    const bus_no="Your Bus No";
     res.render("ticket" ,{name:name, age:age, email:email, number:number, date:date, bus_number:bus_no})
 })
 app.get('/about',(req,res)=>
 {
 res.sendFile(path.join(__dirname, "/aboutus.html"))
+})
+app.get('/finalTicket',(req,res)=>
+{   
+    const name = data[0];
+    const age = data[1];
+    const email=data[2];
+    const number=data[3];
+    const date= data[4];
+    const bus_no=data[5];
+    res.render("finalTicket" ,{name:name, age:age, email:email, number:number, date:date, bus_number:bus_no})
 })
 
 

@@ -68,16 +68,17 @@ input[type="text"]:hover{
     padding:0px;
     box-sizing: border-box;
 }
-.box{border:2px solid black;
-border-radius: 8px;
-width:45%;
-margin:30px 10px;
-padding:40px;
-position: relative;
-font-family: 'Gabarito', sans-serif;
-background-color: white(154, 153, 150);
-height:120px;
-box-shadow: 1px 1px 1px 1px black;
+.box{background-color: #ff8888;
+    border: 2px solid black;
+    border-radius: 6px;
+    width: 47%;
+    margin: 30px 10px;
+    padding: 36px;
+    position: relative;
+    font-family: 'Gabarito', sans-serif;
+    background-color: white(154, 153, 150);
+    height: 125px;
+    box-shadow: 0px 1px 1px 0px gray;
 
 }
 
@@ -86,9 +87,12 @@ box-shadow: 1px 1px 1px 1px black;
     /* transform: translateY(-10px); */
     /* transform:scale(1.01) */
 }
-.main_box{display: flex;
-flex-wrap: wrap;
-justify-content: space-around;}
+.main_box{
+    background: #ffeaea;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+margin-top:40px}
 
 .main_box h1{
     padding:10px;

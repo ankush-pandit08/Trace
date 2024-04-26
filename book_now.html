@@ -86,7 +86,7 @@ background-color:rgb(244, 244, 244);
   <div class="headder">
     <!-- <h2>Ticket Booking Form</h2> -->
 
-    <form action="/ticket" method="post">
+    <form action="/Ticket" method="post">
       <h3>Passenger Details</h3><br>
       <input type="text" name="name" id="name" placeholder="Enter Your Full Name" required>
 
@@ -97,14 +97,14 @@ background-color:rgb(244, 244, 244);
       <input type="radio" name="gender" id="female" value="female">
 
       <br>
-
    <h3>Contact Details</h3> <br>
       <input type="email" name="email" id="email" placeholder="Enter Your Email" required>
 
-      <input type="number" name="number" id="number" placeholder="Phone Number" required>
+      <!-- <input type="tel" name="number" id="number" placeholder="Phone Number" required > -->
+      <input type="tel" id="phone" name="number" placeholder="Phone" pattern="[789][0-9]{9}" title="Please Enter a valid Phone" required>
 <br>
    
-      <input type="date" name="date" id="date" required>
+      <input type="date" name="date" id="date" placeholder="Date Of Your Journey" required>
 <br>
    
       <input type="number" name="bus_no" id="bus_no" placeholder="Bus Number" required>

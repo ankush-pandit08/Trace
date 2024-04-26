@@ -17,6 +17,21 @@
     cursor: pointer;
 }
 
+#print{
+    color:black;
+}
+#payment{
+    top: 18px;
+    right: 30px;
+    position: absolute;
+    font-family: 'Gabarito';
+    text-decoration: none;
+    background: lightcoral;
+    border-radius: 8px;
+    border: 2px solid black;
+    color: black;
+}
+
 *{
     padding:0px;
     margin:0px;
