@@ -9,7 +9,7 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
-   
+  
 </head>
 <body>
     <div class="container">
@@ -22,6 +22,7 @@
           <form action="/login" name="signin" method="post" onsubmit="return validateForm()">
             <input type="email" name="email" id="username" placeholder="Email" required/>
             <input type="password" name="password" placeholder="Password" id="password" required />
+            <input type="checkbox" style="width: 14px; margin-right:7px" class="show" onclick="myFunction()">show password
             
             <button>Log-in</button>
             </form>
@@ -47,5 +48,15 @@
         return true;
         }
       </script> -->
+      <script>
+        function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+      </script>
 </body>
 </html>

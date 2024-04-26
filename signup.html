@@ -26,6 +26,8 @@
           <input type="text" name="username" id="username" placeholder="UserName" required />
           <input type="email" name="email" placeholder="Email" id="email" required />
           <input type="password" name="password" placeholder="Password" id="password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required />
+          <input type="checkbox" style="width: 14px; margin-right:7px" class="show" onclick="myFunction()">show password
+
           <button>Sign Up</button>
         </form>
       </div>
@@ -51,6 +53,16 @@
       
       return true;
     }
+    
+        function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+    
   </script>
 </body>
 
