@@ -98,8 +98,11 @@ if(isLogin){
     // const from1 =data.From;
     // const to1 =data.To;
     // const number = data.number;
+    const d = new Date();
+    let date = d.getDate() + ":"+ d.getMonth()+":"+d.getFullYear();
+    
 if(data){
-     res.status(200).render('bus_list', {number: data.number, from: data.From , to: data.To})}
+     res.status(200).render('bus_list', {number: data.number, from: data.From , to: data.To, date:date})}
 
      else{
         res.sendFile(path.join(__dirname,'/not_found.html'))
@@ -139,7 +142,7 @@ app.post('/login',async(req, res)=>{
             res.sendFile(path.join(__dirname,'./index.html'))
         }
 
-        else if(email==='abc@gmail.com' && password ==='geek'){
+        else if(email==='junaid@gmail.com' && password ==='junaid'){
             res.sendFile(path.join(__dirname,'./admin.html'))
             
         }
